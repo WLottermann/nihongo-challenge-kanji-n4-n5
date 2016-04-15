@@ -1,2 +1,2 @@
 # nihongo-challenge-n4-5-kanji
-Presenting all kanji featured in にほんご チャレンジ N4・N5 かんじ (Nihongo Charenji N4 - N5 Kanji) by ASK PUBLISHING.
+Presenting all kanji featured in [**にほんごチャレンジ かんじ N4-N5**](http://www.ask-books.com/challenge_kanji/) (*Nihongo Charenji Kanji N4-N5*) by [ASK PUBLISHING](http://www.ask-books.com/). [アスクショップで購入！](http://www.ask-shop.net/shopdetail/042002000034/)

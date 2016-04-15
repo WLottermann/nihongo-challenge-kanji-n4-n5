@@ -4,10 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>にほんご チャレンジ N4・N5 かんじ</title>
-
-    <!-- Bootstrap -->
     <link href="_bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -17,9 +14,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-      * { /*
-        line-height: 1.8em; */
-      }
       body {
         color: Black;
         font-size: 16px;
@@ -426,9 +420,7 @@
       </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="_bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="_bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="_bower_components/jQuery.print/jQuery.print.js"></script>
     <script>
@@ -480,10 +472,6 @@
     <script>
       $(document).ready(function() {
         $('.navbar-brand').click(function () {
-         //1 second of animation time
-         //html works for FFX but not Chrome
-         //body works for Chrome but not FFX
-         //This strange selector seems to work universally
          $('html, body').animate({scrollTop: 0}, 1000);
       });
         $('body').removeClass('hidden').addClass('show');

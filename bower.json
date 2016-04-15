@@ -10,11 +10,7 @@
   "license": "GNU General Public License v3.0",
   "private": true,
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "**/.*"
   ],
   "dependencies": {
     "bootstrap": "^3.3.6",

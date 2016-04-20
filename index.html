@@ -7,7 +7,7 @@
     <title>にほんごチャレンジ かんじ N4-N5</title>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- danger: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -29,7 +29,7 @@
         vertical-align: middle !important;
       }
       table tbody tr:hover .word.extra {
-        -webkit-backface-visibility: hidden; // fix for transition flickering
+        -webkit-backface-visibility: hidden;
         -webkit-transition: .3s ease-in-out;
            -moz-transition: .3s ease-in-out;
             -ms-transition: .3s ease-in-out;
@@ -103,29 +103,34 @@
       table tbody tr td:nth-child(2):hover {
         font-family: "HiraMinPro-W3", "Hiragino Mincho Pro W3", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro W3", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", "MS Mincho", serif;
       }
+			.alert {
+				border-radius: 0;
+				margin-bottom: 0;
+				margin-top: 25px;
+			}
+			.alert a {
+				font-weight: bold;
+			}
+			.alert a:focus,
+			.alert a:hover {
+				text-decoration: underline;
+			}
+			.alert a[type="button"] {
+				color: White;
+				font-weight: none;
+			}
+			.alert a[type="button"]:focus,
+			.alert a[type="button"]:hover {
+				text-decoration: none;
+			}
+			.alert-danger a {
+				color: #a94442;
+			}
+			.alert-warning a {
+				color: #8a6d3b;
+			}
       .arabiasuuji {
         background-color: LavenderBlush;
-      }
-      .card-link {
-        right: 22px;
-      }
-      .print-link {
-        right: 0;
-      }
-      .card-link,
-      .print-link {
-        color: Black;
-        cursor: pointer;
-        display: block;
-        position: absolute;
-        bottom: 9px;
-        opacity: .8;
-        text-decoration: none !important;
-      }
-      .card-link:hover,
-      .print-link:hover {
-        color: Black;
-        opacity: 1;
       }
       .hidden {
         display: none;
@@ -144,6 +149,7 @@
       }
       .navbar-brand {
         color: Black !important;
+				font-size: 14px;
       }
       .navbar-brand span:nth-child(1) {
         font-weight: bold;
@@ -153,6 +159,17 @@
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         font-weight: light;
       }
+			.navbar .btn.btn-link {
+				color: Black;
+				padding: 0;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+			.navbar .btn.btn-link:focus,
+			.navbar .btn.btn-link:hover {
+				color: Yellow;
+				text-decoration: none;
+			}
       .navbar-default {
         background-color: Magenta;
         border-color: Yellow;
@@ -195,6 +212,7 @@
       .navbar-default .navbar-link:focus,
       .navbar-default .navbar-link:visited {
         color: Black;
+				font-size: 14px;
         text-decoration: none !important;
       }
       .navbar-default .navbar-link:hover {
@@ -209,6 +227,7 @@
       }
       .navbar-nav .dropdown .dropdown-toggle {
         color: Black;
+				font-size: 14px;
       }
       .navbar-nav .dropdown .dropdown-toggle:hover {
         color: Yellow;
@@ -222,15 +241,50 @@
         padding-top: 40px;
         position: relative;
       }
+			.page-header .wrapper {
+        display: block;
+				float: right;
+				margin-top: -17px;
+      }
+			.page-header .wrapper .card-link,
+      .page-header .wrapper .print-link {
+				color: Black;
+				cursor: pointer;
+				float: right;
+				margin-left: 10px;
+				opacity: .8;
+        text-decoration: none !important;
+			}
+      .page-header .wrapper .card-link:hover,
+      .page-header .wrapper .print-link:hover {
+        color: Black;
+        opacity: 1;
+      }
+			.page-header .wrapper .card-link .glyphicon,
+      .page-header .wrapper .print-link .glyphicon {
+				margin: 0 5px;
+			}
       .show {
         display: block;
       }
-      .warning {
+      .danger {
         color: Red;
       }
       .word.extra {
         opacity: .4;
       }
+			@media (max-width: 1280px) {
+				.page-header .wrapper a > span:nth-of-type(2){
+					display: none !important;
+				}
+			}
+			@media (max-width: 768px) {
+				.navbar .btn.btn-link {
+					padding: 10px 15px;
+					padding-bottom: 10px;
+					padding-top: 10px;
+				}
+			}
       @media (max-width: 400px) {
         .navbar-brand {
           font-size: 0.8em;
@@ -245,7 +299,7 @@
         .page-header h1 {
           font-size: 1em;
         }
-        .page-header small {
+        .page-header > small {
           display: block;
           font-size: 0.8em;
           line-height: 2em;
@@ -331,7 +385,7 @@
         .page-header h1 {
           font-size: 1.5em;
         }
-        .page-header small {
+        .page-header > small {
           display: inline;
           font-size: 1em;
         }
@@ -348,10 +402,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">にほんご<span>チャレンジ</span> かんじ <span>N4-N5</span></a>
-        </div>
-        <p class="navbar-text navbar-right visible-sm visible-md visible-lg"><a class="navbar-link" href="http://www.ask-shop.net/shopdetail/042002000034/" target="_blank">アスクショップで購入！</a></p>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <a class="navbar-brand" href="#" title="Nihongo Challenge Kanji N4-N5">にほんご<span>チャレンジ</span> かんじ <span>N4-N5</span></a>
+        </div>				
+        <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">１部 <span class="caret"></span></a>
@@ -394,14 +447,23 @@
                 <li class="disabled"><a href="#part2-lesson20"><b>Lesson20</b> 動詞２ <small>Verbs 2</small></a></li>
               </ul>
             </li>
-            <li><a class=" navbar-link hidden-sm hidden-md hidden-lg" href="http://www.ask-shop.net/shopdetail/042002000034/" target="_blank">アスクショップで購入！</a></li>
           </ul>
         </div>
+				<p class="navbar-text navbar-right visible-sm visible-md visible-lg"><button type="button" class="btn btn-link visible-sm visible-md visible-lg toggle" title="Hide Extra Compound Words">✘ 余分な熟語を隠します</button></p>
       </div>
     </nav>
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12">
+					<div class="alert alert-danger alert-dismissible fade in" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<h4 title="Warning!" style="cursor: help;">注意書き!</h4>
+						<h5><b>I made this without the editor's consent.</b> Please, consider purchasing <a href="http://www.ask-books.com/challenge_kanji/" title="Nihongo Challenge Kanji N4-N5">にほんごチャレンジ かんじ N4-N5</a> at <a href="http://www.ask-shop.net/shopdetail/042002000034/">the publisher's online store</a> or at your favourite bookseller!</h5>
+						<p>
+							<a type="button" class="btn btn-danger" href="http://www.ask-shop.net/shopdetail/042002000034/" target="_blank" title="Purchase at Ask Shop!">アスクショップで購入！</a>
+							<button type="button" class="btn btn-default" data-dismiss="alert" title="I'll buy it later!">後で買いますよ!</button>
+						</p>
+					</div>
           <div class="" id="part1-lesson1" include-HTML="漢字/１部１課.html"></div>
           <div class="" id="part1-lesson2" include-HTML="漢字/１部２課.html"></div>
           <div class="" id="part1-lesson3" include-HTML="漢字/１部３課.html"></div>
@@ -493,6 +555,20 @@
         $('.navbar-brand').click(function () {
          $('html, body').animate({scrollTop: 0}, 1000);
         });
+				
+				$(function(){
+					$('.toggle').click(function () {
+						$(this).text(function(i, text){
+							return text === '✘ 余分な熟語を隠します' ? '✔ 余分な熟語を表示します' : '✘ 余分な熟語を隠します';
+						})
+						if ($('.toggle').attr('title', 'Hide Extra Compound Words')) {
+							$('.toggle').attr('title', 'Show Extra Compound Words');
+						} else {
+							$('.toogle').attr('title', 'Hide Extra Compound Words');
+						}
+					});
+				})
+				
         $('body').removeClass('hidden').addClass('show');
       });
     </script>

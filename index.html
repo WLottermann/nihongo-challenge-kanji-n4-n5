@@ -406,7 +406,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#" title="Nihongo Challenge Kanji N4-N5">にほんご<span>チャレンジ</span> かんじ <span>N4-N5</span></a>
-        </div>				
+        </div>
         <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="dropdown">
@@ -558,14 +558,14 @@
         $('.navbar-brand').click(function () {
          $('html, body').animate({scrollTop: 0}, 1000);
         });
-				
+
 				$(function(){
 					$('.toggle').click(function () {
-						
+
 						$(this).text(function(i, text){
 							return text === '✘ 余分な熟語を隠します' ? '✔ 余分な熟語を表示します' : '✘ 余分な熟語を隠します';
 						})
-						
+
 						if($(this).attr('title') == 'Hide Extra Compound Words') {
 							$(this).attr('title', 'Show Extra Compound Words');
 							$('.word.extra').css('display', 'none');
@@ -577,7 +577,7 @@
 						}
 					});
 				})
-				
+
         $('body').removeClass('hidden').addClass('show');
       });
     </script>

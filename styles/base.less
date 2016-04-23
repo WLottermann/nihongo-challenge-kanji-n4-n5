@@ -1,0 +1,184 @@
+// compress: false, main: main.less
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////// THIS IS THE BEGINNING
+
+@black: Black;
+@chartreuse: Chartreuse;
+@honeydew: HoneyDew;
+@lavender: Lavender;
+@lavenderblush: LavenderBlush;
+@lemonchiffon: LemonChiffon;
+@orangered: OrangeRed;
+@red: Red;
+@white: White;
+
+@danger: #a94442;
+@warning: #8a6d3b;
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+.HiraKakuPro { font-family: "HiraKakuPro-W3", "Hiragino Kaku Gothic Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "游ゴシック", YuGothic, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック", "MS Gothic", sans, sans-serif; }
+.HiraMinPro { font-family: "HiraMinPro-W3", "Hiragino Mincho Pro W3", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro W3", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", "MS Mincho", serif; }
+
+.thin { font-weight: 100; }
+.extra-light { font-weight: 200; }
+.light { font-weight: 300; }
+.normal { font-weight: 400; }
+.medium { font-weight: 500; }
+.semi-bold { font-weight: 600; }
+.bold { font-weight: 700; }
+.extra-bold { font-weight: 800; }
+.ultra-bold { font-weight: 900; }
+
+.font-size(@sizeValue) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  font-size: ~"@{pxValue}px";
+  font-size: ~"@{remValue}rem";
+}
+
+.line-height(@heightValue) {
+  @remValue: @heightValue;
+  @pxValue: (@heightValue * 10);
+  line-height: ~"@{pxValue}px";
+  line-height: ~"@{remValue}rem";
+}
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@keyframes fadeIn {
+  0%		{ opacity: 0; }
+  100%	{ opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0%		{ opacity: 0; }
+  100%	{ opacity: 1; }
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@keyframes fadeOut {
+  0%		{ opacity: 1; }
+  100%	{ opacity: 0; }
+}
+
+@-webkit-keyframes fadeOut {
+  0%		{ opacity: 1; }
+  100%	{ opacity: 0; }
+}
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+.clearfix() {
+	&:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.flip {
+  -webkit-transform: scaleX(-1);
+     -moz-transform: scaleX(-1);
+       -o-transform: scaleX(-1);
+          transform: scaleX(-1);
+  -ms-filter: "FlipH";
+      filter: FlipH;
+}
+
+.hide {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.opaque {
+  opacity: 1;
+  filter:alpha(opacity=100);
+}
+
+.show {
+	display: block;
+}
+
+.translucent {
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.transparent {
+  opacity: 0;
+  filter:alpha(opacity=0);
+}
+
+.transition {
+  -webkit-backface-visibility: hidden; // fix for transition flickering
+  -webkit-transition: .3s ease;
+     -moz-transition: .3s ease;
+      -ms-transition: .3s ease;
+       -o-transition: .3s ease;
+          transition: .3s ease;
+}
+
+.visible {
+  visibility: visible;
+}
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+* {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 1px transparent;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+}
+
+*:focus {
+	outline: 0 !important;
+}
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////// THIS IS THE END

@@ -136,7 +136,7 @@
       .arabiasuuji {
         background-color: LavenderBlush;
       }
-      .hidden {
+      .hide {
         display: none;
       }
       .hiragana {
@@ -165,12 +165,41 @@
       }
 			.navbar .btn.btn-link {
 				color: Black;
-				padding: 0;
+				padding: 14px 15px;
 				text-decoration: none;
 				text-transform: uppercase;
 			}
-			.navbar .btn.btn-link:focus,
+			.navbar .btn.btn-link:before {
+				display: inline-block;
+				font-family: 'Glyphicons Halflings';
+				font-style: normal;
+				font-weight: 400;
+				line-height: 1;
+				margin: 0 5px;
+				position: relative;
+				top: 1px;
+			}
 			.navbar .btn.btn-link:hover {
+				color: Yellow;
+			}
+			.navbar .btn.btn-link[title="Hide Extra Compound Words"] {
+				background-color: Yellow;
+				color: Black;
+			}
+			.navbar .btn.btn-link[title="Hide Extra Compound Words"]:before {
+				content: "\e106";
+			}
+			.navbar .btn.btn-link[title="Hide Extra Compound Words"]:hover {
+				text-decoration: none;
+			}
+			.navbar .btn.btn-link[title="Show Extra Compound Words"]  {
+				background-color: transparent;
+				color: Black;
+			}
+			.navbar .btn.btn-link[title="Show Extra Compound Words"]:before {
+				content: "\e105";
+			}
+			.navbar .btn.btn-link[title="Show Extra Compound Words"]:hover {
 				color: Yellow;
 				text-decoration: none;
 			}
@@ -224,6 +253,7 @@
         text-decoration: none;
       }
       .navbar-right {
+				margin: 0;
         margin-right: 0;
       }
       .navbar-nav .dropdown .dropdown-menu {
@@ -245,6 +275,13 @@
         padding-top: 40px;
         position: relative;
       }
+			.page-header h1 {
+				display: block;
+				margin-right: 10%;
+			}
+			.page-header h1 small {
+				display: inline-block;
+			}
 			.page-header .wrapper {
         display: block;
 				float: right;
@@ -280,6 +317,10 @@
       .word.extra {
         opacity: .4;
       }
+			.word.extra,
+			.word.extra + br {
+				display: none;
+			}
 			@media (max-width: 1279px) {
 				.page-header .wrapper a > span:nth-of-type(2){
 					display: none !important;
@@ -297,7 +338,7 @@
           display: block;
         }
 				.page-header .wrapper {
-					display: none;
+					display: block;
 				}
       }
       @media print {
@@ -389,7 +430,7 @@
       }
     </style>
   </head>
-  <body class="hidden">
+  <body class="hide">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -444,10 +485,10 @@
                 <li class="disabled"><a href="#part2-lesson20"><b>Lesson20</b> 動詞２ <small>Verbs 2</small></a></li>
               </ul>
             </li>
-						<li><button type="button" class="btn btn-link hidden-sm hidden-md hidden-lg toggle" title="Hide Extra Compound Words">✘ 余分な熟語を隠します</button></li>
+						<li><button type="button" class="btn btn-link hidden-sm hidden-md hidden-lg toggle" title="Show Extra Compound Words">余分な熟語を表示します</button></li>
           </ul>
         </div>
-				<p class="navbar-text navbar-right visible-sm visible-md visible-lg"><button type="button" class="btn btn-link visible-sm visible-md visible-lg toggle" title="Hide Extra Compound Words">✘ 余分な熟語を隠します</button></p>
+				<p class="navbar-text navbar-right visible-sm visible-md visible-lg"><button type="button" class="btn btn-link visible-sm visible-md visible-lg toggle" title="Show Extra Compound Words">余分な熟語を表示します</button></p>
       </div>
     </nav>
     <div class="container-fluid">
@@ -556,20 +597,20 @@
 				$(function(){
 					$('.toggle').click(function () {
 						$(this).text(function(i, text){
-							return text === '✘ 余分な熟語を隠します' ? '✔ 余分な熟語を表示します' : '✘ 余分な熟語を隠します';
+							return text === '余分な熟語を表示します' ? '余分な熟語を隠します' : '余分な熟語を表示します';
 						})
-						if($(this).attr('title') == 'Hide Extra Compound Words') {
-							$(this).attr('title', 'Show Extra Compound Words');
-							$('.word.extra').css('display', 'none');
-							$('.word.extra + br').hide();
-						} else {
+						if($(this).attr('title') == 'Show Extra Compound Words') {
 							$(this).attr('title', 'Hide Extra Compound Words');
 							$('.word.extra').css('display', 'inline');
 							$('.word.extra + br').show();
+						} else {
+							$(this).attr('title', 'Show Extra Compound Words');
+							$('.word.extra').css('display', 'none');
+							$('.word.extra + br').hide();
 						}
 					});
 				})
-        $('body').removeClass('hidden').addClass('show');
+        $('body').removeClass('hide').addClass('show');
       });
     </script>
   </body>

@@ -183,7 +183,7 @@
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
             if (target.length) {
               $('html, body').animate({
-                scrollTop: target.offset().top - 50
+                scrollTop: target.offset().top - 100
               }, 1000);
               return false;
             }
@@ -196,22 +196,6 @@
         $('.navbar-brand').click(function () {
          $('html, body').animate({scrollTop: 0}, 1000);
         });
-        $(function(){
-          $('.toggle').click(function () {
-            $(this).text(function(i, text){
-              return text === '余分な熟語を表示します' ? '余分な熟語を隠します' : '余分な熟語を表示します';
-            })
-            if($(this).attr('title') == 'Show Extra Compound Words') {
-              $(this).attr('title', 'Hide Extra Compound Words');
-              $('.word.extra').css('display', 'inline');
-              $('.word.extra + br').show();
-            } else {
-              $(this).attr('title', 'Show Extra Compound Words');
-              $('.word.extra').css('display', 'none');
-              $('.word.extra + br').hide();
-            }
-          });
-        })
         $('body').removeClass('hide').addClass('show');
       });
     </script>
